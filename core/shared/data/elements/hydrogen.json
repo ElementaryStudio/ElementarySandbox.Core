@@ -1,0 +1,33 @@
+{
+    "id": 1,
+    "name": "Hydrogen",
+    "discoverer": {
+        "name": "Henry Cavendish",
+        "year": 1766
+    },
+    "shell":{
+        "electrons": 1,
+        "protons": 1,
+        "neutrons": 0,
+        "grid": "K1L0M0N0O0Q0R0"
+    },
+    "thermodynamic":{
+        "phase": "GAS",
+        "heat": {
+            "fusion": {
+                "value": 0.558,
+                "formula": "kJ * mol"
+            }
+        }
+    },
+    "atomic": {
+        "configuration": "s1^1",
+        "ion": "H+,H-",
+        "potential": "13.53 eV",
+        "radius": {
+            "atomic": "53 pm",
+            "covalent": "38 pm",
+            "bla": "120 pm"
+        }
+    }
+}
