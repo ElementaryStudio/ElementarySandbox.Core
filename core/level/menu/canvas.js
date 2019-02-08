@@ -1,3 +1,9 @@
+go.onAwake = function(){
+    // reset all child
+    game.animation.SmoothAlpha($("Canvas>Menu>Start>[RectTransform]"), 0.0, 0.0);
+    game.animation.SmoothAlpha($("Canvas>Menu>Exit>[RectTransform]"), 0.0, 0.0);
+}
+
 var bindEvents = function() {
     $("Canvas>Menu>Exit>[Button]").onClick.AddListener(function() {
         //sys.app.quit();
