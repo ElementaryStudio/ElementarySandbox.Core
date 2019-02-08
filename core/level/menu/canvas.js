@@ -1,7 +1,15 @@
 go.onAwake = function(){
     // reset all child
-    game.animation.SmoothAlpha($("Canvas>Menu>Start>[RectTransform]"), 0.0, 0.0);
-    game.animation.SmoothAlpha($("Canvas>Menu>Exit>[RectTransform]"), 0.0, 0.0);
+    game.animation.SmoothAlpha($("Canvas>Menu>Start>[RectTransform]"), 0, 0);
+    game.animation.SmoothAlpha($("Canvas>Menu>Exit>[RectTransform]"), 0, 0);
+    game.animation.SmoothAlpha($("Canvas>Setup>ContentGroup>GraphicContent>[RectTransform]"), 0, 0);
+    game.animation.SmoothAlpha($("Canvas>Setup>ContentGroup>PhysicsContent>[RectTransform]"), 0, 0);
+    game.animation.SmoothAlpha($("Canvas>Setup>ContentGroup>InfoContent>[RectTransform]"), 0, 0);
+    $("Canvas>Setup>ContentGroup>InfoContent>Version>[Text]").text = `v${sys.app.version}`;
+    $("Canvas>Setup>ContentGroup>InfoContent>Shadermodel>[Text]").text = `${game.info.GPU.ShaderLevel}`;
+    $("Canvas>Setup>ContentGroup>InfoContent>SoftwareLicenseButton>[Button]").onClick.AddListener(function(){
+        game.openURL(`file:${folder(`${_content}\\Licenses`)}`);
+    })
 }
 
 var bindEvents = function() {
