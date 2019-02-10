@@ -1,11 +1,15 @@
 go.onAwake = function(){
-    $("Canvas>BlockMenu>Reset>[Button]").onClick.AddListener(function() {
-        game.control.loadLevel(2);
+    var btn = $("Canvas>BlockMenu>Reset>[Button]");
+    btn.onClick.AddListener(function() {
+        btn.interactable = false;
+        // fix sound clip play :D
+        game.TaskManager().AddTask(0.2, function(){
+            game.control.loadLevel(2);
+        });
     });
     $("Canvas>BlockMenu>Exit>[Button]").onClick.AddListener(function() {
         game.control.loadLevel(1);
     });
-    $("Canvas>BlockMenu>Save>[Button]").interactable = false;
 
     
     if(light.IsAvailable())

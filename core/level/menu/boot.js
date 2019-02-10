@@ -1,6 +1,6 @@
 go.onAwake = function(){
-    var rect = $("Canvas>Setup>[RectTransform]");
 
+    var rect = $("Canvas>Setup>[RectTransform]");
 
     game.animation.SmoothMove(rect, Vector3(-2000, 2000, 0), 0);
     // reset all child
