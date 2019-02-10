@@ -58,20 +58,20 @@ var showMenu = function(){
 go.onLate = function(){
     bindEvents();
     
-    var discordController = $("DiscordManager>[DiscordController]");
+    var dis = game.discord();
     var unlock = function() {
         var login = $("Canvas>Login>[Text]");
         if(game.isEditor)
             login.text = `dev#1337`;
         else
-            login.text = `${game.discord.login()}`;
+            login.text = `${dis.login}`;
         $("GlobalCanvas>Version>[Text]").text = `v${sys.app.version}`;
         game.control.DontDestroy($("GlobalCanvas"));
         showMenu();
-        discordController.SetPreset("In menu", "")
+        dis.SetPreset("In menu", "")
     };
-    if(discordController.IsAuthed() || game.isEditor) 
+    if(dis.IsAuthed() || game.isEditor) 
         unlock();
     else 
-        discordController.onConnect.AddListener(unlock);
+        dis.onConnect.AddListener(unlock);
 }
