@@ -1,5 +1,5 @@
 go.onAwake = function(){
-
+    time.timeScale = 1;
     var rect = $("Canvas>Setup>[RectTransform]");
 
     game.animation.SmoothMove(rect, Vector3(-2000, 2000, 0), 0);

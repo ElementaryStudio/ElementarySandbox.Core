@@ -25,6 +25,7 @@ function UpdatePreset()
 
 
 go.onAwake = function(){
+    time.timeScale = 1;
     var btn = $("Canvas>BlockMenu>Reset>[Button]");
     btn.onClick.AddListener(function() {
         btn.interactable = false;
@@ -34,7 +35,9 @@ go.onAwake = function(){
         });
     });
     $("Canvas>BlockMenu>Exit>[Button]").onClick.AddListener(function() {
-        game.control.loadLevel(1);
+        game.TaskManager().AddTask(0.2, function(){
+            game.control.loadLevel(1);
+        });
     });
 
     
